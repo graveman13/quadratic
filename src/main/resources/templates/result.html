@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Quadratic Calculation
+        <Result></Result>
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>Result of</h1>
+    <h1>AX^2 + BX + C</h1>
+</div>
+
+<br/><br/>
+<a th:href="@{/calculate}">Calculate new quadratic</a>
+<br/><br/>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>X1</th>
+            <th>X2</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:utext="${quadratic.a}">...</td>
+            <td th:utext="${quadratic.b}">...</td>
+            <td th:utext="${quadratic.c}">...</td>
+            <td th:utext="${quadratic.x1}">...</td>
+            <td th:utext="${quadratic.x2}">...</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

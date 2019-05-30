@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Quadratic Calculation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <h2 th:utext="${message1}">..!..</h2>
+    <h2 th:utext="${message2}">..!..</h2>
+</div>
+
+<div class="container">
+    <form th:action="@{/calculate}"
+          th:object="${form}"
+          method="post">
+
+        <div class="form-group form-item">
+            <label for="A">Enter parameter A:</label>
+            <input type="number" th:field="*{a}" id="A" autofocus="autofocus" placeholder="A">
+        </div>
+
+        <div class="form-group form-item">
+            <label for="B">Enter parameter B:</label>
+            <input type="number" id="B" th:field="*{b}" placeholder="B">
+        </div>
+
+        <div class="form-group form-item">
+            <label for="C">Enter parameter C:</label>
+            <input type="number" id="C" th:field="*{c}" placeholder="C">
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <input type="submit" name="login-submit" id="login-submit" value="Calculate">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+
+</html>
